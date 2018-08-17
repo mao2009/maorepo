@@ -23,7 +23,7 @@ class Takoyaki(object):
         jointed_url = base
         for url in urls:
             jointed_url = urlparse.urljoin(jointed_url,url)
-        return
+        return jointed_url
 
     @classmethod
     def build_url(cls, query):

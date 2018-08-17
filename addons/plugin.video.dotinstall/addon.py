@@ -18,8 +18,7 @@ class DotInstall(Takoyaki):
             'top_menu': self.top_menu,
             'lessons': self.lessons,
             'lesson': self.lesson,
-            'select_source': self.select_source,
-            'play_video': self.play_video
+            'select_source': self.select_source
         }
         selected_mode = modes.get(mode)
         selected_mode()
