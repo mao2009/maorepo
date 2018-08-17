@@ -10,7 +10,7 @@
 			<hashes>true</hashes>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>repo for ip address</summary>
+		<summary>mao's repository</summary>
 		<platform>all</platform>
 	</extension>
 </addon>
