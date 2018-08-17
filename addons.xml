@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="repository.maorepo" name="mao's repository" version="0.0.1" provider-name="mao2009">
+<addon id="plugin.video.dotinstall" name="dotinstall" version="0.0.1" provider-name="mao2009">
 	<requires>
-	<import addon="xbmc.addon" version="12.0.0"/>
+	    <import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.beautifulsoup4"/>
+        <import addon="script.module.takoyaki"/>
 	</requires>
-	<extension point="xbmc.addon.repository" name="maorepo">
-			<info compressed="false">https://mao2009.github.io/maorepo/addons.xml</info>
-			<checksum>https://mao2009.github.io/maorepo/addons.xml.md5</checksum>
-			<datadir zip="true">https://mao2009.github.io/maorepo/repo</datadir>
-			<hashes>true</hashes>
-	</extension>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>repo for ip address</summary>
+		<summary>this addon for learn to programing from dotinstall</summary>
 		<platform>all</platform>
 	</extension>
 </addon>
+
+<addon id="script.module.takoyaki" name="TAKOYAKI" version="0.0.1" provider-name="mao2009">
+	<requires>
+	    <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests"/>
+
+	</requires>
+	<extension point="xbmc.python.module" library="lib">
+        <provides>video</provides>
+    </extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>this add-on is simple framework</summary>
+		<platform>all</platform>
+	</extension>
+</addon>
+
 </addons>
