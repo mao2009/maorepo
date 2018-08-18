@@ -15,14 +15,14 @@
 		<website>https://mao2009.github.io/maorepo/</website>
 		<source>https://github.com/mao2009/maorepo</source>
 	</extension>
-</addon><addon id="repository.maorepo" name="mao's repository" provider-name="mao2009" version="0.0.1">
+</addon><addon id="repository.maorepo" name="mao's repository" provider-name="mao2009" version="0.0.2">
 	<requires>
 		<import addon="xbmc.addon" version="12.0.0" />
 	</requires>
 	<extension name="maorepo" point="xbmc.addon.repository">
 		<info compressed="false">https://mao2009.github.io/maorepo/addons.xml</info>
 		<checksum>https://mao2009.github.io/maorepo/addons.xml.md5</checksum>
-		<datadir zip="true">https://mao2009.github.io/maorepo/addons</datadir>
+		<datadir zip="true">https://mao2009.github.io/maorepo/repo</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>mao's repository</summary>
