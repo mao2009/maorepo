@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.module.takoyaki" name="TAKOYAKI" version="0.0.1" provider-name="mao2009">
 	<requires>
-	    <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.requests"/>
-
+		<import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.requests"/>
 	</requires>
 	<extension point="xbmc.python.module" library="lib">
-    </extension>
+	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>this add-on is simple framework</summary>
 		<platform>all</platform>

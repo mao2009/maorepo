@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="repository.maorepo" name="mao's repository" version="0.0.1" provider-name="mao2009">
 	<requires>
-	<import addon="xbmc.addon" version="12.0.0"/>
+		<import addon="xbmc.addon" version="12.0.0"/>
 	</requires>
 	<extension point="xbmc.addon.repository" name="maorepo">
-			<info compressed="false">https://mao2009.github.io/maorepo/addons.xml</info>
-			<checksum>https://mao2009.github.io/maorepo/addons.xml.md5</checksum>
-			<datadir zip="true">https://mao2009.github.io/maorepo/addons</datadir>
+		<info compressed="false">https://mao2009.github.io/maorepo/addons.xml</info>
+		<checksum>https://mao2009.github.io/maorepo/addons.xml.md5</checksum>
+		<datadir zip="true">https://mao2009.github.io/maorepo/addons</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>mao's repository</summary>
+		<discription>mao's repository</discription>
 		<platform>all</platform>
 		<license>GNU GPL v.2</license>
 		<website>https://mao2009.github.io/maorepo/</website>
 		<source>https://github.com/mao2009/maorepo</source>
 	</extension>
-</addon>
+	</addon>
