@@ -72,4 +72,4 @@ class Takoyaki(object):
             elif mode == 'post' or mode == 'p':
                 return session.post(url, headers=headers, data=query, cookies=cookies).text
 
-        raise ValueError('Unexpected modo')
+        raise ValueError('Unexpected mode')
