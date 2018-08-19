@@ -30,7 +30,7 @@ class DotInstall(Takoyaki):
         query = {
             'mail': self.username,
             'password': self.password,
-            'token': token
+            'one_time_token': token
         }
         super(DotInstall, self).login(self.LOGIN_URL, query, mode='post')
 
