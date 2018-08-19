@@ -90,7 +90,8 @@ class DotInstall(Takoyaki):
         bs = BeautifulSoup(html)
         if bs.find('i', class_='icon-user') is not None:
             self.login()
-
+            html = self.download_html(url)
+            bs = BeautifulSoup(html)
         elements = bs.find_all(class_='span8')
 
         for element_num, element in enumerate(elements):
