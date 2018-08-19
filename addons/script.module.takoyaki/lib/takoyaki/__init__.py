@@ -59,6 +59,13 @@ class Takoyaki(object):
         params = urlparse.parse_qs(sys.argv[2][1:])
         return {key: value[0] for key, value in params.items()}
 
-    def download_html(self, url, cookie=None):
-        headers = {'user-agent': self.USER_AGENT}
-        return requests.get(url, headers=headers).text
+    def download_html(self, url, mode='get', headers={}, query={}, cookies={}, session=None):
+        if session is None:
+            session = requests.Session()
+
+        headers['user_agent'] = self.USER_AGENT
+
+        if mode == 'get' or mode == 'g':
+            return session.get(url, headers=headers, params=query, cookies=cookies).text
+        elif mode == 'post' or mode == 'p':
+            return session.post(url, headers=headers, data=query, cookies=cookies).text
