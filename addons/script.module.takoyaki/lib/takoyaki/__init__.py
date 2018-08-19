@@ -28,7 +28,6 @@ class Takoyaki(object):
         if self.is_login:
             self.password = self.__addon__.getSetting('password')
             self.username = self.__addon__.getSetting('username')
-        self.cookies = self.read_cookie()
         self.session = self.open_session()
 
     def set_basic_auth(self, user, password):
@@ -49,30 +48,14 @@ class Takoyaki(object):
         selected_mode = modes.get(mode)
         selected_mode()
 
-    def write_cookie(self, cookie, cookie_file_name='cookie.dump'):
-        cookie_file_path = self.path_join(self.__addon_user_data__, cookie_file_name)
-        with open(cookie_file_path, 'wb') as fp:
-            pickle.dump(cookie, fp)
-
-    def read_cookie(self, cookie_file_name='cookie.dump'):
-        cookie_file_path = self.path_join(self.__addon_user_data__, cookie_file_name)
-        if os.path.exists(cookie_file_path):
-            with open(cookie_file_path, 'rb') as fp:
-                cookie = pickle.load(fp)
-            return cookie
-        else:
-            return {}
-
     def login(self, login_url, query, mode='post'):
 
         if mode == 'get' or mode == 'g':
-            cookies = self.session.get(login_url,  params=query).cookies
+            self.session.get(login_url,  params=query)
         elif mode == 'post' or mode == 'p':
-            cookies = self.session.post(login_url,  data=query).cookies
+            self.session.post(login_url,  data=query)
         else:
             raise ValueError('Unexpected mode')
-        self.session.cookies.update(cookies)
-        self.write_cookie(cookie=cookies)
 
     @classmethod
     def path_join(cls, path, *paths):
