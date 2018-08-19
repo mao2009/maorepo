@@ -69,6 +69,9 @@ class DotInstall(Takoyaki):
         xbmcplugin.endOfDirectory(self.__handle__)
 
     def select_source(self):
+        if self.is_login:
+            self.login()
+
         url = self.params.get('link')
         html = self.download_html(url)
         bs = BeautifulSoup(html)
@@ -88,10 +91,7 @@ class DotInstall(Takoyaki):
         url = self.url_join(self.BASE_URL, 'lessons')
         html = self.download_html(url)
         bs = BeautifulSoup(html)
-        if bs.find('i', class_='icon-user') is not None:
-            self.login()
-            html = self.download_html(url)
-            bs = BeautifulSoup(html)
+
         elements = bs.find_all(class_='span8')
 
         for element_num, element in enumerate(elements):
