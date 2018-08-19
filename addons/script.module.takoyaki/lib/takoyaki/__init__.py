@@ -26,11 +26,10 @@ class Takoyaki(object):
     def run(self):
         self.select_mode()
 
-    def select_mode(self, func, default_mode='top_menu'):
+    def select_mode(self, modes, default_mode='top_menu'):
         mode = self.params.get('mode', default_mode)
-        modes = func()
         selected_mode = modes.get(mode)
-        return selected_mode
+        selected_mode()
 
     def write_cookie(self, cookie, cookie_file_name='cookie.dump'):
         cookie_file_path = os.path.join(self.__user_data_path__, cookie_file_name)
