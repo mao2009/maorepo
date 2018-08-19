@@ -35,7 +35,6 @@ class Takoyaki(object):
 
     def open_session(self):
         session = requests.Session()
-        session.cookies.update(self.cookies)
         headers = {'user_agent': self.USER_AGENT}
         session.headers.update(headers)
         return session
