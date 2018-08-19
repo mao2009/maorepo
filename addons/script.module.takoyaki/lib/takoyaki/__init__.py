@@ -20,6 +20,12 @@ class Takoyaki(object):
     def run(self):
         self.select_mode()
 
+    def select_mode(self, func, default_mode='top_menu'):
+        mode = self.params.get('mode', default_mode)
+        modes = func()
+        selected_mode = modes.get(mode)
+        return selected_mode
+
     @classmethod
     def write_cookie(cls, session, cookie_file_name='cookie.dump'):
         with open('cookie_file_name', 'wb') as fp:

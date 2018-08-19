@@ -12,16 +12,15 @@ class DotInstall(Takoyaki):
 
     BASE_URL = 'https://dotinstall.com/'
 
+    @Takoyaki.select_mode(default_mode='top_menu')
     def select_mode(self):
-        mode = self.params.get('mode', 'top_menu')
         modes = {
             'top_menu': self.top_menu,
             'lessons': self.lessons,
             'lesson': self.lesson,
             'select_source': self.select_source
         }
-        selected_mode = modes.get(mode)
-        selected_mode()
+        return modes
 
     def lessons(self):
         url = self.urljoin(self.BASE_URL, 'lessons')
