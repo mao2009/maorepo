@@ -43,11 +43,25 @@ class Takoyaki(object):
             cookie = pickle.load(fp)
         return cookie
 
-    @classmethod
-    def login(cls, login_url, query):
-        session = requests.Session()
-        response = session.post(login_url, data=query)
-        return session, response
+    def login(self, login_url, query, mode='post', session=None, headers={}):
+        if session is None:
+            headers['user_agent'] = self.USER_AGENT
+            if mode == 'get' or mode == 'g':
+                cookies = requests.get(login_url, params=query, headers=headers).cookies
+
+            elif mode == 'post' or mode == 'p':
+                cookies = requests.post(login_url, data=query, headers=headers).cookies
+            else:
+                raise ValueError('Unexpected mode')
+        else:
+            if mode == 'get' or mode == 'g':
+                cookies = session.get(login_url, headers=headers, params=query).cookies
+            elif mode == 'post' or mode == 'p':
+                cookies = session.post(login_url, headers=headers, data=query).cookies
+            else:
+                raise ValueError('Unexpected mode')
+        self.write_cookie(cookie=cookies)
+
 
     @classmethod
     def urljoin(cls, base, *urls):
