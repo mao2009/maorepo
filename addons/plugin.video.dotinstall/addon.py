@@ -26,7 +26,7 @@ class DotInstall(Takoyaki):
         url = 'https://dotinstall.com/login'
         html = self.download_html(url)
         soup = BeautifulSoup(html)
-        token = soup.find('input', class_='one_time_token').get('value')
+        token = soup.find('input', class_='one_time_token').get('value').encode('utf-8')
         query = {
             'mail': self.username,
             'password': self.password,
