@@ -1,0 +1,31 @@
+# Kodi Media Center language file
+# Addon Name: dotinstall
+# Addon id: plugin.video.dotinstall
+# Addon Provider: mao2009
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: mao2009\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30001"
+msgid "General"
+msgstr ""
+
+mmsgctxt "#30011"
+msgid "Login"
+msgstr ""
+
+msgctxt "#30012"
+msgid "User name"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Password"
+msgstr ""
