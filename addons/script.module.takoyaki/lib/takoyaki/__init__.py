@@ -1,10 +1,13 @@
 # codec: utf-8
 
+import os
 import sys
 import urllib
 import urlparse
 import pickle
 import requests
+
+import xbmcaddon
 
 
 class Takoyaki(object):
@@ -13,6 +16,9 @@ class Takoyaki(object):
 
     __base__url = sys.argv[0]
     __handle__ = int(sys.argv[1])
+    __addon__ = xbmcaddon.Addon()
+    __addon_id__ = __addon__.getAddonInfo('id')
+    __addon_user_data_ = os.path.join('special://userdata/addon_data', __addon_id__)
 
     def __init__(self):
         self.params = self.parse_parameter()
@@ -26,16 +32,16 @@ class Takoyaki(object):
         selected_mode = modes.get(mode)
         return selected_mode
 
-    @classmethod
-    def write_cookie(cls, session, cookie_file_name='cookie.dump'):
-        with open('cookie_file_name', 'wb') as fp:
-            pickle.dump(session.cookies, fp)
+    def write_cookie(self, cookie, cookie_file_name='cookie.dump'):
+        cookie_file_path = os.path.join(self.__user_data_path__, cookie_file_name)
+        with open(cookie_file_path, 'wb') as fp:
+            pickle.dump(cookie, fp)
 
-    @classmethod
-    def read_cookie(cls, session, cookie_file_name='cookie.dump'):
-        with open(cookie_file_name, 'rb') as fp:
+    def read_cookie(self, cookie_file_name='cookie.dump'):
+        cookie_file_path = os.path.join(self.__user_data_path__, cookie_file_name)
+        with open(cookie_file_path, 'rb') as fp:
             cookie = pickle.load(fp)
-            session.cookies.update(cookie)
+        return cookie
 
     @classmethod
     def login(cls, login_url, query):
