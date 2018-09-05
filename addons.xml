@@ -32,7 +32,7 @@
 		<website>https://mao2009.github.io/maorepo/</website>
 		<source>https://github.com/mao2009/maorepo</source>
 	</extension>
-</addon><addon id="script.module.takoyaki" name="TAKOYAKI" provider-name="mao2009" version="0.0.6">
+</addon><addon id="script.module.takoyaki" name="TAKOYAKI" provider-name="mao2009" version="0.0.7">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.requests" />
