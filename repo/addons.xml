@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addons><addon id="repository.maorepo" name="mao's repository" version="0.0.2" provider-name="mao2009">
+<addons><addon id="repository.maorepo" name="mao's repository" version="0.0.3" provider-name="mao2009">
 	<requires>
 		<import addon="xbmc.addon" version="12.0.0" />
 	</requires>
 	<extension point="xbmc.addon.repository" name="maorepo">
-		<info compressed="false">https://mao2009.github.io/maorepo/addons.xml</info>
-		<checksum>https://mao2009.github.io/maorepo/addons.xml.md5</checksum>
+		<info compressed="false">https://mao2009.github.io/maorepo/repo/addons.xml</info>
+		<checksum>https://mao2009.github.io/maorepo/repo/addons.xml.md5</checksum>
 		<datadir zip="true">https://mao2009.github.io/maorepo/repo</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -16,7 +16,7 @@
 		<website>https://mao2009.github.io/maorepo/</website>
 		<source>https://github.com/mao2009/maorepo</source>
 	</extension>
-	</addon><addon id="script.module.takoyaki" name="TAKOYAKI" version="0.1.3" provider-name="mao2009">
+	</addon><addon id="script.module.takoyaki" name="TAKOYAKI" version="0.1.4" provider-name="mao2009">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
